@@ -5,13 +5,13 @@
       <div class="circle yellow" color="yellow"></div>
       <div class="circle green" color="green"></div>
     </div>
-<!--    <p id="countdown">-->
-
-<!--    </p>-->
+    <Timer></Timer>
   </div>
 </template>
 
 <script>
+import Timer from "../components/Timer";
+
 export default {
   name: "Yellow",
 
@@ -20,20 +20,19 @@ export default {
       time: 3
     }
   },
-
-  // mounted() {
-  //   let timerId = setInterval(() => {
-  //     const countDownEl = document.getElementById("countdown")
-  //     countDownEl.innerHTML = this.time
-  //     this.time--
-  //     if (this.time === 0) {
-  //       clearTimeout(timerId)
-  //     }
-  //   }, 1000)
-  // },
-
-  methods: {
+  components: {
+    Timer
   },
+
+  mounted() {
+    // this.printNumbers(5 - 1, 0)
+    this.$store.commit('printNumbers', {
+      from: this.time - 1,
+      to: 0
+    })
+  },
+
+  methods: {},
 
 }
 

@@ -5,27 +5,30 @@
       <div class="circle yellow" color="yellow"></div>
       <div class="circle green" color="green"></div>
     </div>
-    <p id="countdown">
-
-    </p>
+    <Timer></Timer>
   </div>
 </template>
 
 <script>
+import Timer from "../components/Timer";
+
 export default {
   name: "Green",
 
   data() {
     return {
-      time: 5
+      time: 15
     }
+  },
+  components: {
+    Timer
   },
 
 
   mounted() {
     // this.printNumbers(5 - 1, 0)
     this.$store.commit('printNumbers', {
-      from: 4,
+      from: this.time - 1,
       to: 0
     })
   },
@@ -82,12 +85,5 @@ export default {
 .green {
   background-color: #1eb51e;
   box-shadow: 0 0 25px #1eb51e;
-}
-
-#countdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 42px;
 }
 </style>

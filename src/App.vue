@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       colors: ['red', 'yellow', 'green'],
-      intervals: [4000, 3000, 5000],
+      intervals: [10000, 3000, 15000],
       active: true
     }
   },
