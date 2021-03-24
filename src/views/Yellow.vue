@@ -28,7 +28,9 @@ export default {
     // this.printNumbers(5 - 1, 0)
     this.$store.commit('printNumbers', {
       from: this.time - 1,
-      to: 0
+      to: 0,
+      color: document.querySelector("[color=yellow]"),
+      darkClass: "yellowDark"
     })
   },
 
@@ -73,5 +75,10 @@ export default {
 .green {
   background-color: #4ac14a80;
   box-shadow: 0 0 10px #4ac14a80;
+}
+
+.yellowDark {
+  background-color: #f3f38c66;
+  box-shadow: 0 0 25px #f3f38c66;
 }
 </style>

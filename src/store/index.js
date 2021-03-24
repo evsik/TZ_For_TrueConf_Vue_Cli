@@ -12,12 +12,15 @@ export default new Vuex.Store({
         printNumbers(state, payload) {
             let current = payload.from;
             let path = document.getElementById("countdown")
-            console.log(payload.from, payload.to)
+            console.log(payload.from, payload.to, payload.color, payload.darkClass)
 
             let timerId = setInterval(function () {
                 path.innerHTML = current;
                 if (current == payload.to) {
                     clearInterval(timerId);
+                } else if (current <= 3) {
+                    console.log("Мигать")
+                    payload.color.classList.toggle(payload.darkClass)
                 }
                 current--;
             }, 1000);
