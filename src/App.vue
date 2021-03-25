@@ -1,12 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/red">Red</router-link>
-      |
-      <router-link to="/yellow">Yellow</router-link>
-      |
-      <router-link to="/green">Green</router-link>
-    </div>
     <router-view>
       {{ changeColors }}
     </router-view>
@@ -14,7 +7,6 @@
 </template>
 
 <script>
-
 export default {
   name: "App",
 
@@ -22,7 +14,6 @@ export default {
     return {
       colors: ['red', 'yellow', 'green'],
       intervals: [10000, 3000, 15000],
-      active: true
     }
   },
 
@@ -50,20 +41,12 @@ export default {
           }, time
       )
     },
-    updateCountdown(time) {
-      // const countDownEl = document.getElementById("countdown")
-      // countDownEl.innerHTML = time
-      // time--
-      // console.log(time)
-    }
   }
 }
 
 </script>
 
 <style lang="scss">
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../node_modules/bootstrap-vue/src/index.scss';
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -71,18 +54,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!--    <div class="trafficLights">-->
-    <!--      <div class="circle red" color="red"></div>-->
-    <!--      <div class="circle yellow" color="yellow"></div>-->
-    <!--      <div class="circle green" color="green"></div>-->
-    <!--    </div>-->
     <TrafficLights></TrafficLights>
     <Timer></Timer>
   </div>
@@ -19,7 +14,9 @@ export default {
 
   data() {
     return {
-      time: 10
+      time: 10,
+      setStorage: localStorage.setItem('test', "6"),
+      getStorage: localStorage.getItem('test')
     }
   },
   components: {
@@ -28,16 +25,39 @@ export default {
   },
 
   mounted() {
-    // this.printNumbers(5 - 1, 0)
-    this.$store.commit('printNumbers', {
+    this.$store.commit('onTrafficLights', {
       from: this.time - 1,
       to: 0,
       color: document.querySelector("[color=red]"),
-      darkClass: "redDark"
+      class: "red"
     })
+    // this.onTrafficLights(0)
   },
 
-  methods: {},
+  methods: {
+    // onTrafficLights(to) {
+    //   let current = localStorage.getItem('test')
+    //   current = +current
+    //   let path = document.getElementById("countdown")
+    //   let light = document.querySelector("[color=red]")
+    //
+    //   light.classList.add("red")
+    //
+    //   let timerId = setInterval(function () {
+    //
+    //     path.innerHTML = current
+    //     console.log(current)
+    //
+    //     if (current == to) {
+    //       clearInterval(timerId)
+    //     } else if (this.time <= 3) {
+    //       light.classList.toggle("red")
+    //     }
+    //     current--
+    //     return localStorage.setItem('test', current)
+    //   }, 1000)
+    // },
+  },
 
 }
 
@@ -45,43 +65,4 @@ export default {
 
 <style scoped lang="scss">
 
-//.trafficLights {
-//  margin: 0 auto;
-//  background-color: #2c3e50;
-//  height: 200px;
-//  width: 70px;
-//  border-radius: 50px;
-//  display: flex;
-//  justify-content: space-between;
-//  align-items: center;
-//  padding: 15px 0;
-//  flex-direction: column;
-//}
-//
-//.circle {
-//  background-color: rgba(0, 0, 0, 0.3);
-//  width: 40px;
-//  height: 40px;
-//  border-radius: 50%;
-//}
-//
-//.red {
-//  background-color: #d42f2f;
-//  box-shadow: 0 0 25px #d42f2f;
-//}
-//
-//.yellow {
-//  background-color: #f3f38c66;
-//  box-shadow: 0 0 10px #f3f38c66;
-//}
-//
-//.green {
-//  background-color: #4ac14a80;
-//  box-shadow: 0 0 10px #4ac14a80;
-//}
-//
-//.redDark {
-//  background-color: #d42f2f94;
-//  box-shadow: 0 0 25px #d42f2f94;
-//}
 </style>

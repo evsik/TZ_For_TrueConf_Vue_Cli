@@ -17,14 +17,14 @@ export default {
   border-radius: 50%;
 }
 
-.red {
-  background-color: #d42f2f;
-  box-shadow: 0 0 25px #d42f2f;
-}
-
 .redDark {
   background-color: #d42f2f94;
   box-shadow: 0 0 10px #d42f2f94;
+}
+
+.red {
+  background-color: #d42f2f;
+  box-shadow: 0 0 25px #d42f2f;
 }
 
 </style>
