@@ -1,4 +1,7 @@
-# true-conf
+# TZ for true-conf
+traffic light with route signal switching. 
+using Vue, vuex, webpack/vue-cli
+
 
 ## Project setup
 ```
